@@ -1,0 +1,255 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/bg.jpg') center/cover; /* Adjust the path accordingly */
+  }
+  
+  /* Bordered form */
+  form {
+    border: 3px solid #f1f1f1;
+    border-radius: 8px;
+    max-width: 400px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+ 
+  
+  /* Add padding to containers */
+  .container {
+    padding: 0;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  
+  h1{
+    text-align: center;
+  }
+
+  /*Student Login css*/
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #qr-code-scanner {
+    position: relative;
+  }
+  
+  #video-feed {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  #qr-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #00f;
+    display: none;
+  }
+
+  /* Styling for the table */
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+/* Styling for labels */
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.label-success {
+  background-color: #5cb85c;
+}
+
+/* Styling for buttons */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+/* Table-Record */
+.body-container {
+  font-family: "Inter", sans-serif;
+  border: 1px solid #ddd;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: inline-block;
+  max-width: 1000px;
+}
+.table-record {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-record th,
+.table-record td {
+  padding: 15px;
+  text-align: center;
+  color: #535151cc;
+}
+
+.table-record th {
+  border-top: 1px solid #ddd;;
+  border-bottom: 1px solid #ddd;;
+  font-size: 17px;
+}
+
+.table-record td {
+  font-size: 15px;
+}
+
+.table-record tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+.table-record tbody tr:nth-child(odd) {
+  background-color: #e3e7e967;
+}
+
+.body-header {
+  text-align: left;
+}
+
+.body-header label {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin-right: 1px;
+}
+
+.body-header select,
+.body-header button {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* CSS for the logout button */
+.logout-button {
+  position: absolute;
+  top: 20px; /* Adjust the distance from the top */
+  right: 50px; /* Adjust the distance from the right */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #2367a0; /* Adjust the color as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+.logout-button:hover {
+  color: #0d47a1; /* Adjust the hover color as needed */
+}
