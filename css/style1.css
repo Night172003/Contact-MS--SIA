@@ -238,18 +238,4 @@ html, body {
   margin-right: 10px;
 }
 
-/* CSS for the logout button */
-.logout-button {
-  position: absolute;
-  top: 20px; /* Adjust the distance from the top */
-  right: 50px; /* Adjust the distance from the right */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: #2367a0; /* Adjust the color as needed */
-  font-size: 16px; /* Adjust the font size as needed */
-}
 
-.logout-button:hover {
-  color: #0d47a1; /* Adjust the hover color as needed */
-}

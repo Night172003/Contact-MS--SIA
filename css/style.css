@@ -197,7 +197,7 @@ a {
 .body .navigation .user img {
   margin-right: 8px;
   float: left;
-  border: 2px solid #2367a0;
+  border: 2px solid red;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -435,3 +435,19 @@ header .current-date {
   }
 }
 
+.Logout {
+  background-color: transparent;
+  border: 2px solid green; /* Adding a border with blue color */
+  padding: 10px 20px; /* Adjusting padding for better appearance */
+  margin: 0;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  color: black; /* Set the default color of the text to black */
+  display: inline-block;
+}
+
+/* Style the span inside the button */
+.Logout span {
+  color: black; /* Set the color of the text to black */
+}
