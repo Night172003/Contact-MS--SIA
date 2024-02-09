@@ -10,15 +10,14 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/852106c7be.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link rel="icon" href="images/ICO/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script src="calendar_script.js" defer></script>
-    <script src="script.js"></script>
+    <script src="js.js"></script>
 </head>
 
 <body>
@@ -54,7 +53,7 @@
                         <label for="bdaymonth">Select Contact : </label>
 
                         <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search Name" >
-                        <button class="add-payroll-btn" onkeyup="addFunction()"> +</button>
+                        <button class="add-payroll-btn" onclick="addFunction()"> +</button>
                     </div>
 
                 <table class="table-record" id="employee-records">
@@ -116,59 +115,124 @@
     </div>
     <!--  eof class body  -->
 
-    <!-- Popout Form -->
-    <div class="form-popup" id="Emp-Form">
+    <!--Add Contact Popout Form -->
+    <div class="form-popup" id="Add-Cont-Form">
         <div class="form-container">
-            <h1>EMPLOYEE PAYSLIP</h1>
+            <h1>CONTACT INFORMATION</h1>
             <div class="section-divider2"></div>
 
-            <!-- Employee Details -->
+            <!-- Contact Details -->
             <form action="#">
-                <div class="employee record">
-                    <!-- <span class="title">Employee Details</span> -->
+                <div class="contact record">                    
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="R-0000">
+                            <input type="text" placeholder="Juan Dela C. Cruz">
                         </div>
 
                         <div class="input-field">
                             <label>Gender</label>
-                            <input type="text" placeholder="Juan Dela C. Cruz">
+                            <input type="text" placeholder="MALE">
                         </div>
                         <div class="input-field">
                             <label>Relationship</label>
-                            <input type="text" placeholder="Full-time" >
+                            <input type="text" placeholder="Sister" >
                         </div>
 
                         <div class="input-field">
                             <label>City</label>
-                            <input type="text" placeholder="Development">
+                            <input type="text" placeholder="Quezon City">
                         </div>
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Software Developer" >
+                            <input type="text" placeholder="john@email.com" >
                         </div>
 
                         <div class="input-field">
                             <label>Contact No. 1</label>
-                            <input type="number" placeholder="0" >
+                            <input type="number" placeholder="00000000000" >
                         </div>
 
                         
                         <div class="input-field">
                             <label>Contact No. 2</label>
-                            <input type="number" placeholder="09092255024" >
+                            <input type="number" placeholder="00000000000" >
                         </div>
 
                         <div class="input-field">
                             <label>Contact No. 3</label>
-                            <input type="number" placeholder="09092212324" >
+                            <input type="number" placeholder="00000000000" >
                         </div>
                     </div>
                 </div>
+            </form>
 
-                
+            
+            <div class="section-divider2"></div>
+         
+                    <!-- Save button -->
+                    <div class="button-container">
+                        <button type="button" class="save-button" onclick="saveForm()">Save</button>
+                        <button type="button" class="close-button" onclick="closeForm()">Close</button>
+                    </div>
+                 <!-- End of Save button --> 
+            </div>
+            <!-- End of form Container -->
+        </div>
+      <!-- End of Form Popup -->
+    </div>
+
+
+    <!--Edit Contact Popout Form -->
+    <div class="form-popup" id="Contact-Form">
+        <div class="form-container">
+            <h1>CONTACT INFORMATION</h1>
+            <div class="section-divider2"></div>
+
+            <!-- Contact Details -->
+            <form action="#">
+                <div class="contact record">                    
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Juan Dela C. Cruz">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <input type="text" placeholder="MALE">
+                        </div>
+                        <div class="input-field">
+                            <label>Relationship</label>
+                            <input type="text" placeholder="Sister" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>City</label>
+                            <input type="text" placeholder="Quezon City">
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="john@email.com" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contact No. 1</label>
+                            <input type="number" placeholder="00000000000" >
+                        </div>
+
+                        
+                        <div class="input-field">
+                            <label>Contact No. 2</label>
+                            <input type="number" placeholder="00000000000" >
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contact No. 3</label>
+                            <input type="number" placeholder="00000000000" >
+                        </div>
+                    </div>
+                </div>
             </form>
 
             
@@ -185,6 +249,71 @@
         </div>
       <!-- End of Form Popup -->
     </div>
+
+    <!-- Show Contact Popout Form -->
+    <div class="form-popup" id="Show-Cont-Form">
+        <div class="form-container">
+            <h1>CONTACT INFORMATION</h1>
+            <div class="section-divider2"></div>
+
+            <!-- Contact Details -->
+            <form action="#">
+                <div class="contact record">                    
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Juan Dela C. Cruz" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <input type="text" placeholder="MALE" readonly>
+                        </div>
+                        <div class="input-field">
+                            <label>Relationship</label>
+                            <input type="text" placeholder="Sister" readonly >
+                        </div>
+
+                        <div class="input-field">
+                            <label>City</label>
+                            <input type="text" placeholder="Quezon City" readonly>
+                        </div>
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="john@email.com" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contact No. 1</label>
+                            <input type="number" placeholder="00000000000" readonly>
+                        </div>
+
+                        
+                        <div class="input-field">
+                            <label>Contact No. 2</label>
+                            <input type="number" placeholder="00000000000" readonly>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Contact No. 3</label>
+                            <input type="number" placeholder="00000000000"readonly >
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="section-divider2"></div>
+         
+            <!-- Save button -->
+            <div class="button-container">
+                <button type="button" class="close-button" onclick="closeForm()">Close</button>
+            </div>
+
+            <!-- End of form Container -->
+        </div>
+      <!-- End of Form Popup -->
+    </div>
+
   
 </body>
 

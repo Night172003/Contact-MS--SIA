@@ -1,60 +1,56 @@
 
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+function searchFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("employee-records");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those that don't match the search query
+  for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to the Name column
+      if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+          } else {
+              tr[i].style.display = "none";
+          }
+      }
   }
 }
 
-window.onload = function() {
-    var rememberMe = document.getElementById("rememberCheckbox");
-    var usernameCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*=\s*([^;]*).*$)|^.*$/, "$1");
+  function editForm() {
+    var formPopup = document.getElementById("Contact-Form");
+    formPopup.style.display = "block";
+}
+  
+function closeForm() {
+  var formPopup = document.getElementById("Contact-Form");
+  formPopup.style.display = "none";
 
-    // Set the "Remember Me" checkbox based on the presence of the username cookie
-    rememberMe.checked = usernameCookie !== "";
+  var formPopup = document.getElementById("Show-Cont-Form");
+  formPopup.style.display = "none";
 
-    // If "Remember Me" is checked, fill in the username field with the saved username
-    if (rememberMe.checked) {
-      document.getElementsByName("uname")[0].value = usernameCookie;
-    }
-  };
+  var formPopup = document.getElementById("Add-Cont-Form");
+  formPopup.style.display = "none";
+}
 
+function openForm() {
+  var formPopup = document.getElementById("Show-Cont-Form");
+  formPopup.style.display = "block";
+}
 
-  document.addEventListener('DOMContentLoaded', (event) => {
-    const video = document.getElementById('video-feed');
-    const canvas = document.getElementById('qr-canvas');
-    const ctx = canvas.getContext('2d');
-  
-    // Check if the browser supports getUserMedia
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true })
-        .then((stream) => {
-          video.srcObject = stream;
-          video.play();
-  
-          // Initialize the QR code scanner
-          const qrScanner = new QrScanner(video, result => {
-            // Handle the QR code result
-            console.log(result);
-            // You can perform further actions with the scanned QR code data here
-          });
-  
-          // Start scanning
-          qrScanner.start();
-  
-          // Optional: Stop scanning when the video feed is clicked
-          video.addEventListener('click', () => {
-            qrScanner.stop();
-          });
-        })
-        .catch((error) => {
-          console.error('Error accessing camera:', error);
-        });
-    } else {
-      console.error('getUserMedia not supported on your browser!');
-    }
-  });
-  
+function addFunction() {
+  var formPopup = document.getElementById("Add-Cont-Form");
+  formPopup.style.display = "block";
+}
+
+function deleteRow(button) {
+  // Get the row associated with the button
+  var row = button.closest("tr");
+  // Remove the row from the table
+  row.parentNode.removeChild(row);
+}
